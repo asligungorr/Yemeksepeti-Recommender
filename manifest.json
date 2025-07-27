@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Yemeksepeti Restaurant Recommender",
+    "version": "1.0",
+    "description": "AI-powered restaurant recommender for Yemeksepeti",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["https://*.yemeksepeti.com/*"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.yemeksepeti.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
